@@ -1,3 +1,6 @@
+# @file purpose: invoke LLMs and tools via a syscall interface
+"""LLM and tool invocation helpers."""
+
 from __future__ import annotations
 
 from typing import Any

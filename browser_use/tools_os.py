@@ -1,3 +1,4 @@
+# @file purpose: define tool specs for OS interaction
 """Tool specifications for general OS operations."""
 
 from __future__ import annotations

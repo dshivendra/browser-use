@@ -1,3 +1,6 @@
+# @file purpose: cooperative scheduler for agent generators
+"""Run multiple async agents in priority order."""
+
 from __future__ import annotations
 
 import heapq

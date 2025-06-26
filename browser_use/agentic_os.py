@@ -1,3 +1,4 @@
+# @file purpose: load agentic OS settings from YAML
 """Loader for agentic OS configuration."""
 
 import os
