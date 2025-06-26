@@ -2,9 +2,42 @@ from __future__ import annotations
 
 import logging
 
+import time
+
+from pydantic import BaseModel, Field
+
 from browser_use.agent.memory import Memory, MemoryConfig
 
 logger = logging.getLogger(__name__)
+	
+	
+	class MemoryEntry(BaseModel):
+	"""A single memory item stored in :class:`BrowserMemory`."""
+	
+	text: str
+	timestamp: float = Field(default_factory=lambda: time.time())
+	
+	
+class BrowserMemory:
+"""Simple in-memory storage for text snippets."""
+
+	def __init__(self) -> None:
+	self._entries: list[MemoryEntry] = []
+	self.logger = logger.getChild('BrowserMemory')
+	
+	def store(self, text: str) -> None:
+	"""Store a new memory entry."""
+	self._entries.append(MemoryEntry(text=text))
+	
+	def retrieve(self, limit: int | None = None) -> list[MemoryEntry]:
+	"""Retrieve the most recent memory entries."""
+	if limit is None:
+	return list(self._entries)
+	return self._entries[-limit:]
+	
+	def snapshot(self) -> list[MemoryEntry]:
+	"""Return a copy of all stored memories."""
+	return list(self._entries)
 
 
 def initialize_memory(agent) -> None:
