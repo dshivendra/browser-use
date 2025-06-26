@@ -620,10 +620,6 @@ from browser_use.agent.execution import (
     load_and_rerun as _exec_load_and_rerun,
     _update_action_models_for_page as _exec_update_action_models_for_page,
 )
-from browser_use.agent.planning import (
-    _run_planner as _planning_run_planner,
-    _remove_think_tags as _planning_remove_think_tags,
-)
 
 Agent.multi_act = _exec_multi_act
 Agent.rerun_history = _exec_rerun_history
@@ -631,8 +627,6 @@ Agent._execute_history_step = _exec_execute_history_step
 Agent._update_action_indices = _exec_update_action_indices
 Agent.load_and_rerun = _exec_load_and_rerun
 Agent._update_action_models_for_page = _exec_update_action_models_for_page
-Agent._run_planner = _planning_run_planner
-Agent._remove_think_tags = _planning_remove_think_tags
 
 	def add_new_task(self, new_task: str) -> None:
 		"""Add a new task to the agent, keeping the same task_id as tasks are continuous"""
