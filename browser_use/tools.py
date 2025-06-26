@@ -3,6 +3,7 @@
 from pydantic import BaseModel, create_model
 
 from agentic_os import ToolSpec, register_spec
+from browser_use.controller.service import Controller
 from browser_use.agent.views import ActionResult
 from browser_use.controller.views import (
     ClickElementAction,
@@ -18,6 +19,13 @@ from browser_use.controller.views import (
     SendKeysAction,
     SwitchTabAction,
 )
+
+_controller = Controller()
+
+
+def _func(name: str):
+	"""Return the controller action callable."""
+	return _controller.registry.registry.actions[name].function
 
 
 class WaitParams(BaseModel):
@@ -43,6 +51,7 @@ register_spec(
         ),
         input_model=DoneAction,
         output_model=ActionResult,
+		func=_func("done"),
     )
 )
 
@@ -55,6 +64,7 @@ register_spec(
         ),
         input_model=SearchGoogleAction,
         output_model=ActionResult,
+		func=_func("search_google"),
     )
 )
 
@@ -64,6 +74,7 @@ register_spec(
         description="Navigate to URL in the current tab",
         input_model=GoToUrlAction,
         output_model=ActionResult,
+		func=_func("go_to_url"),
     )
 )
 
@@ -73,6 +84,7 @@ register_spec(
         description="Go back",
         input_model=NoParamsAction,
         output_model=ActionResult,
+		func=_func("go_back"),
     )
 )
 
@@ -82,6 +94,7 @@ register_spec(
         description="Wait for x seconds default 3",
         input_model=WaitParams,
         output_model=ActionResult,
+		func=_func("wait"),
     )
 )
 
@@ -91,6 +104,7 @@ register_spec(
         description="Click element by index",
         input_model=ClickElementAction,
         output_model=ActionResult,
+		func=_func("click_element_by_index"),
     )
 )
 
@@ -100,6 +114,7 @@ register_spec(
         description="Click and input text into a input interactive element",
         input_model=InputTextAction,
         output_model=ActionResult,
+		func=_func("input_text"),
     )
 )
 
@@ -109,6 +124,7 @@ register_spec(
         description="Save the current page as a PDF file",
         input_model=EmptyParams,
         output_model=ActionResult,
+		func=_func("save_pdf"),
     )
 )
 
@@ -118,6 +134,7 @@ register_spec(
         description="Switch tab",
         input_model=SwitchTabAction,
         output_model=ActionResult,
+		func=_func("switch_tab"),
     )
 )
 
@@ -127,6 +144,7 @@ register_spec(
         description="Open a specific url in new tab",
         input_model=OpenTabAction,
         output_model=ActionResult,
+		func=_func("open_tab"),
     )
 )
 
@@ -136,6 +154,7 @@ register_spec(
         description="Close an existing tab",
         input_model=CloseTabAction,
         output_model=ActionResult,
+		func=_func("close_tab"),
     )
 )
 
@@ -150,6 +169,7 @@ register_spec(
         ),
         input_model=create_model("ExtractStructuredDataParams", query=(str, ...)),
         output_model=ActionResult,
+		func=_func("extract_structured_data"),
     )
 )
 
@@ -162,6 +182,7 @@ register_spec(
         ),
         input_model=create_model("GetAxTreeParams", number_of_elements=(int, ...)),
         output_model=ActionResult,
+		func=_func("get_ax_tree"),
     )
 )
 
@@ -171,6 +192,7 @@ register_spec(
         description="Scroll down the page by pixel amount - if none is given, scroll one page",
         input_model=ScrollAction,
         output_model=ActionResult,
+		func=_func("scroll_down"),
     )
 )
 
@@ -180,6 +202,7 @@ register_spec(
         description="Scroll up the page by pixel amount - if none is given, scroll one page",
         input_model=ScrollAction,
         output_model=ActionResult,
+		func=_func("scroll_up"),
     )
 )
 
@@ -192,6 +215,7 @@ register_spec(
         ),
         input_model=SendKeysAction,
         output_model=ActionResult,
+		func=_func("send_keys"),
     )
 )
 
@@ -201,6 +225,7 @@ register_spec(
         description="If you dont find something which you want to interact with, scroll to it",
         input_model=create_model("ScrollToTextParams", text=(str, ...)),
         output_model=ActionResult,
+		func=_func("scroll_to_text"),
     )
 )
 
@@ -212,6 +237,7 @@ register_spec(
             "WriteFileParams", file_name=(str, ...), content=(str, ...)
         ),
         output_model=ActionResult,
+		func=_func("write_file"),
     )
 )
 
@@ -223,6 +249,7 @@ register_spec(
             "AppendFileParams", file_name=(str, ...), content=(str, ...)
         ),
         output_model=ActionResult,
+		func=_func("append_file"),
     )
 )
 
@@ -232,6 +259,7 @@ register_spec(
         description="Read file_name from file system",
         input_model=create_model("ReadFileParams", file_name=(str, ...)),
         output_model=ActionResult,
+		func=_func("read_file"),
     )
 )
 
@@ -241,6 +269,7 @@ register_spec(
         description="Get all options from a native dropdown",
         input_model=create_model("GetDropdownOptionsParams", index=(int, ...)),
         output_model=ActionResult,
+		func=_func("get_dropdown_options"),
     )
 )
 
@@ -252,6 +281,7 @@ register_spec(
             "SelectDropdownOptionParams", index=(int, ...), text=(str, ...)
         ),
         output_model=ActionResult,
+		func=_func("select_dropdown_option"),
     )
 )
 
@@ -261,6 +291,7 @@ register_spec(
         description="Drag and drop elements or between coordinates on the page - useful for canvas drawing, sortable lists, sliders, file uploads, and UI rearrangement",
         input_model=DragDropAction,
         output_model=ActionResult,
+		func=_func("drag_drop"),
     )
 )
 
@@ -270,6 +301,7 @@ register_spec(
         description="Google Sheets: Get the contents of the entire sheet",
         input_model=EmptyParams,
         output_model=ActionResult,
+		func=_func("read_sheet_contents"),
     )
 )
 
@@ -279,6 +311,7 @@ register_spec(
         description="Google Sheets: Get the contents of a cell or range of cells",
         input_model=create_model("ReadCellContentsParams", cell_or_range=(str, ...)),
         output_model=ActionResult,
+		func=_func("read_cell_contents"),
     )
 )
 
@@ -292,6 +325,7 @@ register_spec(
             new_contents_tsv=(str, ...),
         ),
         output_model=ActionResult,
+		func=_func("update_cell_contents"),
     )
 )
 
@@ -301,6 +335,7 @@ register_spec(
         description="Google Sheets: Clear whatever cells are currently selected",
         input_model=create_model("ClearCellContentsParams", cell_or_range=(str, ...)),
         output_model=ActionResult,
+		func=_func("clear_cell_contents"),
     )
 )
 
@@ -310,6 +345,7 @@ register_spec(
         description="Google Sheets: Select a specific cell or range of cells",
         input_model=create_model("SelectCellOrRangeParams", cell_or_range=(str, ...)),
         output_model=ActionResult,
+		func=_func("select_cell_or_range"),
     )
 )
 
@@ -319,5 +355,6 @@ register_spec(
         description="Google Sheets: Fallback method to type text into (only one) currently selected cell",
         input_model=create_model("FallbackInputParams", text=(str, ...)),
         output_model=ActionResult,
+		func=_func("fallback_input_into_single_selected_cell"),
     )
 )
