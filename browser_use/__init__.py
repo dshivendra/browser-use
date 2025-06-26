@@ -1,4 +1,5 @@
 from browser_use.logging_config import setup_logging
+from browser_use.agentic_os import AGENTIC_OS_CONFIG
 
 logger = setup_logging()
 
@@ -35,9 +36,9 @@ base_subprocess.BaseSubprocessTransport.__del__ = _patched_del
 
 
 __all__ = [
-	'Agent',
-	'Browser',
-	'BrowserConfig',
+        'Agent',
+        'Browser',
+        'BrowserConfig',
 	'BrowserSession',
 	'BrowserProfile',
 	'Controller',
@@ -47,5 +48,6 @@ __all__ = [
 	'ActionModel',
 	'AgentHistoryList',
 	'BrowserContext',
-	'BrowserContextConfig',
+        'BrowserContextConfig',
+        'AGENTIC_OS_CONFIG',
 ]
