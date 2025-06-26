@@ -21,7 +21,7 @@ For examples of custom actions (e.g. uploading files, asking a human-in-the-loop
 To register your own custom functions (which can be `sync` or `async`), decorate them with the `@controller.action(...)` decorator. This saves them into the `controller.registry`.
 
 ```python
-from browser_use import Controller, ActionResult
+from agentic_os.browser_use import Controller, ActionResult
 
 controller = Controller()
 
@@ -80,7 +80,7 @@ The LLM gets the entire pydantic JSON schema for your `param_model`, it will see
 ```python
 from typing import Annotated
 from pydantic import BaseModel, AfterValidator
-from browser_use import ActionResult
+from agentic_os.browser_use import ActionResult
 
 class MyParams(BaseModel):
     field1: int
@@ -117,7 +117,7 @@ For example, actions that need to run playwright code to interact with the brows
 
 ```python
 from playwright.async_api import Page
-from browser_use import Controller, ActionResult
+from agentic_os.browser_use import Controller, ActionResult
 
 controller = Controller()
 
@@ -130,7 +130,7 @@ async def input_text_into_page(text: str, page: Page) -> ActionResult:
 #### Example: Action uses the `browser_context`
 
 ```python
-from browser_use import BrowserSession, Controller, ActionResult
+from agentic_os.browser_use import BrowserSession, Controller, ActionResult
 
 controller = Controller()
 
@@ -233,7 +233,7 @@ If you want actions to only be available on certain pages, and to not tell the L
 
 ```python
 from pydantic import BaseModel
-from browser_use import Controller, ActionResult
+from agentic_os.browser_use import Controller, ActionResult
 
 controller = Controller()
 

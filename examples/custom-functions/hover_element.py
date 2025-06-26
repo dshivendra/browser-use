@@ -10,10 +10,10 @@ load_dotenv()
 
 from pydantic import BaseModel
 
-from browser_use import Agent, Controller
-from browser_use.agent.views import ActionResult
-from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, Controller
+from agentic_os.browser_use.agent.views import ActionResult
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 
 class HoverAction(BaseModel):

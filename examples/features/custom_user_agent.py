@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from browser_use import Agent
-from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.controller.service import Controller
-from browser_use.llm import ChatAnthropic, ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.controller.service import Controller
+from agentic_os.browser_use.llm import ChatAnthropic, ChatOpenAI
 
 
 def get_llm(provider: str):

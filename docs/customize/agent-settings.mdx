@@ -11,8 +11,8 @@ The `Agent` class is the core component of Browser Use that handles browser auto
 ## Basic Settings
 
 ```python
-from browser_use import Agent
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.llm import ChatOpenAI
 
 agent = Agent(
     task="Search for latest news about AI",
@@ -177,7 +177,7 @@ agent = Agent(
 You can configure the agent and provide a separate message to help the LLM understand the task better.
 
 ```python
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use.llm import ChatOpenAI
 
 agent = Agent(
     task="your task",
@@ -191,7 +191,7 @@ agent = Agent(
 You can configure the agent to use a separate planner model for high-level task planning:
 
 ```python
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use.llm import ChatOpenAI
 
 # Initialize models
 llm = ChatOpenAI(model='gpt-4o')
@@ -237,7 +237,7 @@ Using a separate planner model can help:
 Browser Use includes a procedural memory system using [Mem0](https://mem0.ai) that automatically summarizes the agent's conversation history at regular intervals to optimize context window usage during long tasks.
 
 ```python
-from browser_use.agent.memory import MemoryConfig
+from agentic_os.browser_use.agent.memory import MemoryConfig
 
 agent = Agent(
     task="your task",
@@ -261,8 +261,8 @@ agent = Agent(
 You must configure the memory system using the `MemoryConfig` Pydantic model for a type-safe approach:
 
 ```python
-from browser_use.agent.memory import MemoryConfig
-from browser_use.llm import ChatOpenAI # Assuming llm is an instance of ChatOpenAI
+from agentic_os.browser_use.agent.memory import MemoryConfig
+from agentic_os.browser_use.llm import ChatOpenAI # Assuming llm is an instance of ChatOpenAI
 
 llm_for_agent = ChatOpenAI(model="gpt-4o")
 

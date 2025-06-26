@@ -17,10 +17,10 @@ try:
 except Exception:
 	pass
 
-from browser_use import Agent, Controller
-from browser_use.agent.views import ActionResult
-from browser_use.browser import BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, Controller
+from agentic_os.browser_use.agent.views import ActionResult
+from agentic_os.browser_use.browser import BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 logger = logging.getLogger(__name__)
 

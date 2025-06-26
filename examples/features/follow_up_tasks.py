@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from browser_use import Agent, Controller
-from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, Controller
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 # Initialize the model
 llm = ChatOpenAI(

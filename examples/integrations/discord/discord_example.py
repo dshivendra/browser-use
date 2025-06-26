@@ -42,8 +42,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from browser_use.browser import BrowserProfile
-from browser_use.llm import ChatGoogle
+from agentic_os.browser_use.browser import BrowserProfile
+from agentic_os.browser_use.llm import ChatGoogle
 from examples.integrations.discord.discord_api import DiscordBot
 
 # load credentials from environment variables

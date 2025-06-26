@@ -21,9 +21,9 @@ load_dotenv()
 from pydantic import BaseModel
 from PyPDF2 import PdfReader  # type: ignore
 
-from browser_use import ActionResult, Agent, Controller
-from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.llm import ChatAzureOpenAI
+from agentic_os.browser_use import ActionResult, Agent, Controller
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.llm import ChatAzureOpenAI
 
 required_env_vars = ['AZURE_OPENAI_KEY', 'AZURE_OPENAI_ENDPOINT']
 for var in required_env_vars:
