@@ -1,3 +1,6 @@
+# @file purpose: in-memory working memory for agents
+"""Short-term memory storage."""
+
 from __future__ import annotations
 
 from typing import Any, Callable, Dict

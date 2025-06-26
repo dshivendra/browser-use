@@ -1,3 +1,6 @@
+# @file purpose: persistent storage for agent data
+"""Disk backed storage manager."""
+
 from __future__ import annotations
 
 from pathlib import Path

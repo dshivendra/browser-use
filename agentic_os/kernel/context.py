@@ -1,3 +1,6 @@
+# @file purpose: manage LLM context windows
+"""Context window management utilities."""
+
 from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field

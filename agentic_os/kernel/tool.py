@@ -1,3 +1,6 @@
+# @file purpose: register and execute tool specifications
+"""Tool registry and execution helpers."""
+
 from __future__ import annotations
 
 from typing import Any, Iterable, Dict
