@@ -28,8 +28,8 @@ Keep track of which countries you've already said and don't repeat them.
 Only output the country name, no numbers, no punctuation, just the name."""
 
 	# Test with different models
-	models = [
-		ChatOpenAI(model='gpt-4.1'),
+        models = [
+                ChatOpenAI(model='gpt-4o'),
 		# ChatGoogle(model='gemini-2.0-flash-exp'),
 	]
 
