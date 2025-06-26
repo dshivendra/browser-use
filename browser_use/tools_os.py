@@ -1,5 +1,12 @@
 # @file purpose: define tool specs for OS interaction
-"""Tool specifications for general OS operations."""
+"""Tool specifications for general OS operations.
+
+Executing shell commands can be dangerous if user input is passed directly to
+the shell. ``ShellCommandParams`` performs basic validation and rejects commands
+containing common shell control characters to reduce the risk of command
+injection. This validation is not a guarantee of safety, so never execute
+commands from an untrusted source without additional precautions.
+"""
 
 from __future__ import annotations
 
@@ -8,16 +15,28 @@ import signal
 import subprocess
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 from agentic_os import ToolSpec, register_spec
 from browser_use.agent.views import ActionResult
+
+# Characters that should not appear in a shell command for safety
+_DISALLOWED_SHELL_CHARS = {";", "|", "&", "`", "$", ">", "<"}
 
 
 class ShellCommandParams(BaseModel):
     """Parameters for run_shell_command."""
 
     command: str = Field(description="Command to execute in the shell")
+
+    @field_validator("command")
+    @classmethod
+    def _validate_command(cls, v: str) -> str:
+        if any(ch in v for ch in _DISALLOWED_SHELL_CHARS):
+            raise ValueError(
+                "Command contains unsafe characters; disallowed: ; | & ` $ > <"
+            )
+        return v
 
 
 def run_shell_command(params: ShellCommandParams) -> ActionResult:

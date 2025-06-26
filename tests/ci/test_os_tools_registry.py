@@ -5,6 +5,8 @@ from browser_use.tools_os import (
     FilePathParams,
     ManageProcessParams,
 )
+import pytest
+from pydantic import ValidationError
 
 
 def test_os_tool_specs_registered():
@@ -34,3 +36,8 @@ def test_os_tool_callable(tmp_path):
 
     result_list = list_dir(FilePathParams(path=str(tmp_path)))
     assert "example.txt" in result_list.extracted_content
+
+
+def test_shell_command_validation():
+    with pytest.raises(ValidationError):
+        ShellCommandParams(command="echo hi; rm -rf /")
