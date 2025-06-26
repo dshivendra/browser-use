@@ -6,7 +6,7 @@ from browser_use.llm import ChatOpenAI
 
 setup_logging()
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.agent.views import AgentHistoryList
 from browser_use.browser import BrowserSession
 

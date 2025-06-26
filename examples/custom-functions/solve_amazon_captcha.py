@@ -11,7 +11,7 @@ load_dotenv()
 from amazoncaptcha import AmazonCaptcha  # type: ignore
 
 from agentic_os.browser_use import ActionResult
-from agentic_os.browser_use.agent.service import Agent
+from agentic_os.browser_use import Agent
 from agentic_os.browser_use.browser import BrowserConfig, BrowserSession
 from agentic_os.browser_use.controller.service import Controller
 from agentic_os.browser_use.llm import ChatOpenAI
