@@ -1,3 +1,11 @@
+# @file purpose: Core orchestration logic for the Browser Use agent.
+"""Implements the primary Agent class and supporting utilities.
+
+This module wires together browser sessions, planning, memory management
+and action execution. The :class:`Agent` coordinates these subsystems to
+solve tasks using a browser instance.
+"""
+
 import asyncio
 import gc
 import inspect

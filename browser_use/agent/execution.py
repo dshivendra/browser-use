@@ -1,3 +1,11 @@
+# @file purpose: Execution helpers for interacting with the browser.
+"""Asynchronous routines for running actions and replaying history.
+
+These utilities support the :class:`Agent` by executing multiple actions
+per step, replaying stored interaction history and updating action
+indices when the DOM structure changes.
+"""
+
 from __future__ import annotations
 
 import asyncio
