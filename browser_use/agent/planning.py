@@ -1,3 +1,6 @@
+# @file purpose: Planner utilities for generating task strategies.
+"""Classes for producing high level plans via language models."""
+
 from __future__ import annotations
 
 import json

@@ -1,3 +1,6 @@
+# @file purpose: Adapters for enabling memory features in the agent.
+"""In-memory storage and helper routines for agent memory management."""
+
 from __future__ import annotations
 
 import logging
