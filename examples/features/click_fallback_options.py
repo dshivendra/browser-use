@@ -10,8 +10,8 @@ load_dotenv()
 
 from aiohttp import web  # make sure to install aiohttp: pip install aiohttp
 
-from browser_use import Agent, Controller
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, Controller
+from agentic_os.browser_use.llm import ChatOpenAI
 
 # Define a simple HTML page
 HTML_CONTENT = """

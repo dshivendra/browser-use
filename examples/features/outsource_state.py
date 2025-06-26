@@ -16,10 +16,10 @@ load_dotenv()
 
 import anyio
 
-from browser_use import Agent
-from browser_use.agent.views import AgentState
-from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.agent.views import AgentState
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 
 async def main():

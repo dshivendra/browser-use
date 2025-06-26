@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from browser_use import Agent
-from browser_use.browser.profile import BrowserProfile
-from browser_use.browser.session import BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.browser.profile import BrowserProfile
+from agentic_os.browser_use.browser.session import BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 
 async def main():

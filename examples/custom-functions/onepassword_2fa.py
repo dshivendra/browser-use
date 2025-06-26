@@ -11,8 +11,8 @@ load_dotenv()
 
 from onepassword.client import Client  # type: ignore  # pip install onepassword-sdk
 
-from browser_use import ActionResult, Agent, Controller
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import ActionResult, Agent, Controller
+from agentic_os.browser_use.llm import ChatOpenAI
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from browser_use import Agent
-from browser_use.browser import BrowserSession
-from browser_use.llm import ChatGoogle
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.browser import BrowserSession
+from agentic_os.browser_use.llm import ChatGoogle
 
 api_key = os.getenv('GOOGLE_API_KEY')
 if not api_key:
@@ -20,7 +20,7 @@ if not api_key:
 assert api_key is not None, 'GOOGLE_API_KEY must be set'
 llm = ChatGoogle(model='gemini-2.0-flash-exp', api_key=api_key)
 
-from browser_use.browser import BrowserProfile
+from agentic_os.browser_use.browser import BrowserProfile
 
 browser_session = BrowserSession(
 	browser_profile=BrowserProfile(

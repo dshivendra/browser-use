@@ -15,8 +15,8 @@ from lmnr import Laminar
 load_dotenv()
 Laminar.initialize()
 
-from browser_use import Agent
-from browser_use.llm import ChatAnthropic
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.llm import ChatAnthropic
 
 llm = ChatAnthropic(model='claude-4-sonnet-20250514', temperature=0.0)
 
