@@ -6,7 +6,7 @@ logger = setup_logging()
 from asyncio import base_subprocess
 
 from browser_use.agent.prompts import SystemPrompt
-from browser_use.agent.service import Agent
+from browser_use.agent.main import Agent
 from browser_use.agent.views import ActionModel, ActionResult, AgentHistoryList
 from browser_use.browser import Browser, BrowserConfig, BrowserContext, BrowserContextConfig, BrowserProfile, BrowserSession
 from browser_use.controller.service import Controller
