@@ -59,6 +59,13 @@ async def main():
 asyncio.run(main())
 ```
 
+To enable OS helpers like running shell commands or listing directories,
+import `browser_use.tools_os` before creating the agent:
+
+```python
+import browser_use.tools_os  # registers OS tool specs
+```
+
 Add your API keys for the provider you want to use to your `.env` file.
 
 ```bash
