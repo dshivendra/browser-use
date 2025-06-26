@@ -24,14 +24,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from browser_use import Agent
-from browser_use.browser import BrowserSession
-from browser_use.controller.service import Controller
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.browser import BrowserSession
+from agentic_os.browser_use.controller.service import Controller
 
 
 def get_llm(provider: str):
 	if provider == 'anthropic':
-		from browser_use.llm import ChatAnthropic
+		from agentic_os.browser_use.llm import ChatAnthropic
 
 		api_key = os.getenv('ANTHROPIC_API_KEY')
 		if not api_key:
@@ -39,7 +39,7 @@ def get_llm(provider: str):
 
 		return ChatAnthropic(model='claude-3-5-sonnet-20240620', temperature=0.0)
 	elif provider == 'openai':
-		from browser_use.llm import ChatOpenAI
+		from agentic_os.browser_use.llm import ChatOpenAI
 
 		api_key = os.getenv('OPENAI_API_KEY')
 		if not api_key:

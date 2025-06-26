@@ -13,10 +13,10 @@ load_dotenv()
 
 from imgcat import imgcat
 
-from browser_use.browser import BrowserSession
-from browser_use.browser.profile import BrowserProfile
-from browser_use.browser.types import async_patchright
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use.browser import BrowserSession
+from agentic_os.browser_use.browser.profile import BrowserProfile
+from agentic_os.browser_use.browser.types import async_patchright
+from agentic_os.browser_use.llm import ChatOpenAI
 
 llm = ChatOpenAI(model='gpt-4o')
 

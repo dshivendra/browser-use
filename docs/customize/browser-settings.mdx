@@ -11,7 +11,7 @@ Browser Use uses [playwright](https://playwright.dev/python/docs/api/class-brows
 **To launch or connect to a browser**, pass any playwright / browser-use configuration arguments you want to `BrowserSession(...)`:
 
 ```python
-from browser_use import BrowserSession, Agent
+from agentic_os.browser_use import BrowserSession, Agent
 
 browser_session = BrowserSession(
     headless=True,
@@ -213,7 +213,7 @@ The only parameters `BrowserProfile` can NOT take are the session-specific conne
 ### Basic Example
 
 ```python
-from browser_use.browser import BrowserProfile
+from agentic_os.browser_use.browser import BrowserProfile
 
 profile = BrowserProfile(
     stealth=True,
@@ -949,7 +949,7 @@ Whether playwright should swallow SIGTERM signals and kill the browser.
 ## Full Example
 
 ```python
-from browser_use import BrowserSession, BrowserProfile, Agent
+from agentic_os.browser_use import BrowserSession, BrowserProfile, Agent
 
 browser_profile = BrowserProfile(
     headless=False,

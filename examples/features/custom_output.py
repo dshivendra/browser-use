@@ -16,8 +16,8 @@ load_dotenv()
 
 from pydantic import BaseModel
 
-from browser_use import Agent, Controller
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, Controller
+from agentic_os.browser_use.llm import ChatOpenAI
 
 
 class Post(BaseModel):

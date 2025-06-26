@@ -27,7 +27,7 @@ We provide automatic CAPTCHA solving, proxies, human-in-the-loop automation, and
 Launch a local browser using built-in default (playwright `chromium`) or a provided `executable_path`:
 
 ```python
-from browser_use import Agent, BrowserSession
+from agentic_os.browser_use import Agent, BrowserSession
 
 # If no executable_path provided, uses Playwright/Patchright's built-in Chromium
 browser_session = BrowserSession(
@@ -68,7 +68,7 @@ We support most `chromium`-based browsers in `executable_path`, including [Brave
 Pass existing Playwright `Page`, `BrowserContext`, `Browser`, and/or `playwright` API object to `BrowserSession(...)`:
 
 ```python
-from browser_use import Agent, BrowserSession
+from agentic_os.browser_use import Agent, BrowserSession
 from playwright.async_api import async_playwright
 # from patchright.async_api import async_playwright   # stealth alternative
 
@@ -106,7 +106,7 @@ agent = Agent(
 Connect to a browser with open `--remote-debugging-port`:
 
 ```python
-from browser_use import Agent, BrowserSession
+from agentic_os.browser_use import Agent, BrowserSession
 
 # First, start Chrome with remote debugging:
 # /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --remote-debugging-port=9242
@@ -126,7 +126,7 @@ agent = Agent(
 Connect to Playwright Node.js server providers:
 
 ```python
-from browser_use import Agent, BrowserSession
+from agentic_os.browser_use import Agent, BrowserSession
 
 # Connect to a playwright server
 browser_session = BrowserSession(wss_url="wss://your-playwright-server.com/ws")
@@ -143,7 +143,7 @@ agent = Agent(
 Connect to any remote Chromium-based browser:
 
 ```python
-from browser_use import Agent, BrowserSession
+from agentic_os.browser_use import Agent, BrowserSession
 
 # Connect to Chrome via CDP
 browser_session = BrowserSession(cdp_url="http://localhost:9222")
@@ -225,8 +225,8 @@ Browser Use provides a number of ways to re-use profiles, sessions, and other co
 If you are only running one agent & browser at a time, they can re-use the same `user_data_dir` sequentially.
 
 ```python
-from browser_use import Agent, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 reused_profile = BrowserProfile(user_data_dir='~/.config/browseruse/profiles/default')
 
@@ -253,8 +253,8 @@ If you are only running one agent at a time, they can re-use the same active `Br
 Each agent will start off looking at the same tab the last agent ended off on.
 
 ```python
-from browser_use import Agent, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 reused_session = BrowserSession(
     user_data_dir='~/.config/browseruse/profiles/default',
@@ -282,8 +282,8 @@ await reused_session.close()
 ### Parallel Agents, Same Browser, Multiple Tabs
 
 ```python
-from browser_use import Agent, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 
 shared_browser = BrowserSession(
     storage_state='/tmp/cookies.json',
@@ -317,8 +317,8 @@ await shared_browser.close()
 </Warning>
 
 ```python
-from browser_use import Agent, BrowserSession
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent, BrowserSession
+from agentic_os.browser_use.llm import ChatOpenAI
 from playwright.async_api import async_playwright
 
 playwright = await async_playwright().start()
@@ -360,7 +360,7 @@ playwright open https://example.com/ --load-storage=/tmp/auth.json
 ```
 
 ```python
-from browser_use.browser import BrowserProfile, BrowserSession
+from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
 
 shared_profile = BrowserProfile(
     headless=True,

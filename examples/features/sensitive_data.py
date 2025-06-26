@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from browser_use import Agent
-from browser_use.browser import BrowserProfile
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.browser import BrowserProfile
+from agentic_os.browser_use.llm import ChatOpenAI
 
 # Initialize the model
 llm = ChatOpenAI(
@@ -38,7 +38,7 @@ sensitive_data: dict[str, str | dict[str, str]] = {
 task = 'Go to example.com and login with company_username and company_password'
 
 # Always set allowed_domains when using sensitive_data for security
-from browser_use.browser.session import BrowserSession
+from agentic_os.browser_use.browser.session import BrowserSession
 
 browser_session = BrowserSession(
 	browser_profile=BrowserProfile(

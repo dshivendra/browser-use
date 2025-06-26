@@ -26,8 +26,8 @@ Each hook should be an `async` callable function that accepts the `agent` instan
 ### Basic Example
 
 ```python
-from browser_use import Agent
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
+from agentic_os.browser_use.llm import ChatOpenAI
 
 
 async def my_step_hook(agent: Agent):
@@ -232,8 +232,8 @@ import asyncio
 import requests
 from dotenv import load_dotenv
 from pyobjtojson import obj_to_json
-from browser_use.llm import ChatOpenAI
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
 
 # Load environment variables (for API keys)
 load_dotenv()

@@ -12,9 +12,9 @@ import logging
 
 from pydantic import BaseModel
 
-from browser_use import ActionResult, Agent, Controller
-from browser_use.browser.profile import BrowserProfile
-from browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import ActionResult, Agent, Controller
+from agentic_os.browser_use.browser.profile import BrowserProfile
+from agentic_os.browser_use.llm import ChatOpenAI
 
 logger = logging.getLogger(__name__)
 

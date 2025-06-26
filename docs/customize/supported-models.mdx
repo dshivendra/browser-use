@@ -10,7 +10,7 @@ Here's how to configure the models.
 
 ### Migration from Langchain
 
-We have recently switched from Langchain to our own implementation of the models. To migrate the previous code, just replace `from langchain_openai import ChatOpenAI` with `from browser_use.llm import ChatOpenAI` etc. The methods should be compatible(ish).
+We have recently switched from Langchain to our own implementation of the models. To migrate the previous code, just replace `from langchain_openai import ChatOpenAI` with `from agentic_os.browser_use.llm import ChatOpenAI` etc. The methods should be compatible(ish).
 
 ## Model Recommendations
 
@@ -35,8 +35,8 @@ We have natively switched to structured output when possible,
 OpenAI's GPT-4.1 models are recommended for best performance.
 
 ```python
-from browser_use.llm import ChatOpenAI
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatOpenAI
+from agentic_os.browser_use import Agent
 
 # Initialize the model
 llm = ChatOpenAI(
@@ -59,8 +59,8 @@ OPENAI_API_KEY=
 ### Anthropic
 
 ```python
-from browser_use.llm import ChatAnthropic
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatAnthropic
+from agentic_os.browser_use import Agent
 
 # Initialize the model
 llm = ChatAnthropic(
@@ -83,8 +83,8 @@ ANTHROPIC_API_KEY=
 ### Azure OpenAI
 
 ```python
-from browser_use.llm import ChatAzureOpenAI
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatAzureOpenAI
+from agentic_os.browser_use import Agent
 from pydantic import SecretStr
 import os
 
@@ -112,8 +112,8 @@ AZURE_OPENAI_API_KEY=
 > [!IMPORTANT] `GEMINI_API_KEY` was the old environment var name, it should be called `GOOGLE_API_KEY` as of 2025-05.
 
 ```python
-from browser_use.llm import ChatGoogle
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatGoogle
+from agentic_os.browser_use import Agent
 from dotenv import load_dotenv
 
 # Read GOOGLE_API_KEY into env
@@ -138,8 +138,8 @@ GOOGLE_API_KEY=
 ## Groq
 
 ```python
-from browser_use.llm import ChatGroq
-from browser_use import Agent
+from agentic_os.browser_use.llm import ChatGroq
+from agentic_os.browser_use import Agent
 
 llm = ChatGroq(model="meta-llama/llama-4-maverick-17b-128e-instruct")
 
