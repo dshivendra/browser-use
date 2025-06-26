@@ -130,7 +130,7 @@ async def test_single_step():
 	models: list[BaseChatModel] = [
 		ChatGroq(model='meta-llama/llama-4-maverick-17b-128e-instruct'),
 		ChatGoogle(model='gemini-2.0-flash-exp'),
-		ChatOpenAI(model='gpt-4.1'),
+                ChatOpenAI(model='gpt-4o'),
 		ChatAnthropic(model='claude-3-5-sonnet-latest'),  # Using haiku for cost efficiency
 		ChatAzureOpenAI(model='gpt-4o-mini'),
 	]
