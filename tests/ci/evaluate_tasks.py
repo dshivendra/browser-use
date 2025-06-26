@@ -17,7 +17,7 @@ import aiofiles
 import yaml
 from pydantic import BaseModel
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.agent.views import AgentHistoryList
 from browser_use.browser.profile import BrowserProfile
 from browser_use.browser.session import BrowserSession

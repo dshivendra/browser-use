@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from agentic_os.browser_use.agent.service import Agent
+from agentic_os.browser_use import Agent
 from agentic_os.browser_use.browser import BrowserProfile, BrowserSession
 from agentic_os.browser_use.llm import ChatOpenAI
 

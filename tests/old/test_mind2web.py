@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.browser import BrowserProfile, BrowserSession
 from browser_use.llm.azure.chat import ChatAzureOpenAI
 from browser_use.utils import logger

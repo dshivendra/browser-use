@@ -20,7 +20,7 @@ load_dotenv()
 
 from stagehand import Stagehand, StagehandConfig  # type: ignore
 
-from agentic_os.browser_use.agent.service import Agent
+from agentic_os.browser_use import Agent
 
 
 async def main():

@@ -4,7 +4,7 @@ import tempfile
 import pytest
 
 from browser_use.agent.prompts import AgentMessagePrompt
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.browser.views import BrowserStateSummary, TabInfo
 from browser_use.dom.views import DOMElementNode, SelectorMap
 from browser_use.filesystem.file_system import FileSystem

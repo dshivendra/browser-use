@@ -7,7 +7,7 @@ from unittest.mock import Mock
 import pytest
 from langchain_core.language_models.chat_models import BaseChatModel
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 
 
 class TestToolCallingMethods:

@@ -4,7 +4,7 @@ Test complex dropdown interaction functionality.
 
 import pytest
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.agent.views import AgentHistoryList
 
 
