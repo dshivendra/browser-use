@@ -1,3 +1,6 @@
+# @file purpose: Planning utilities for the Browser Use agent.
+"""Generates high level plans and related context."""
+
 from __future__ import annotations
 
 import json

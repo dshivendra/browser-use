@@ -1,3 +1,6 @@
+# @file purpose: Memory initialization helpers and in-memory store for agents.
+"""Provides a simple text memory cache and setup utilities."""
+
 from __future__ import annotations
 
 import logging
