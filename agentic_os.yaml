@@ -1,0 +1,3 @@
+planner_model: gpt-4o
+memory_backend: vector_db
+toolhub_endpoint: https://toolhub.example.com
