@@ -17,7 +17,8 @@ from typing import Optional
 
 from pydantic import BaseModel, Field, field_validator
 
-from agentic_os import ToolSpec, register_spec
+from agentic_os.tools import ToolSpec
+import agentic_os.tools as agentic_tools
 from browser_use.agent.views import ActionResult
 
 # Characters that should not appear in a shell command for safety
@@ -108,7 +109,7 @@ def manage_process(params: ManageProcessParams) -> ActionResult:
 
 
 # Register tool specifications -------------------------------------------------
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="run_shell_command",
         description="Run a shell command on the local OS and return output",
@@ -118,7 +119,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="read_os_file",
         description="Read a file from the local OS",  # avoid collision with browser action
@@ -128,7 +129,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="list_directory",
         description="List contents of a directory on the local OS",
@@ -138,7 +139,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="manage_process",
         description="Start or stop a process by pid or command",
