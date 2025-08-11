@@ -2,7 +2,8 @@
 
 from pydantic import BaseModel, create_model
 
-from agentic_os import ToolSpec, register_spec
+from agentic_os.tools import ToolSpec
+import agentic_os.tools as agentic_tools
 from browser_use.controller.service import Controller
 from browser_use.agent.views import ActionResult
 from browser_use.controller.views import (
@@ -40,7 +41,7 @@ class EmptyParams(NoParamsAction):
 
 
 # Register tool specs ---------------------------------------------------------
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="done",
         description=(
@@ -55,7 +56,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="search_google",
         description=(
@@ -68,7 +69,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="go_to_url",
         description="Navigate to URL in the current tab",
@@ -78,7 +79,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="go_back",
         description="Go back",
@@ -88,7 +89,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="wait",
         description="Wait for x seconds default 3",
@@ -98,7 +99,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="click_element_by_index",
         description="Click element by index",
@@ -108,7 +109,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="input_text",
         description="Click and input text into a input interactive element",
@@ -118,7 +119,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="save_pdf",
         description="Save the current page as a PDF file",
@@ -128,7 +129,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="switch_tab",
         description="Switch tab",
@@ -138,7 +139,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="open_tab",
         description="Open a specific url in new tab",
@@ -148,7 +149,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="close_tab",
         description="Close an existing tab",
@@ -158,7 +159,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="extract_structured_data",
         description=(
@@ -173,7 +174,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="get_ax_tree",
         description=(
@@ -186,7 +187,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="scroll_down",
         description="Scroll down the page by pixel amount - if none is given, scroll one page",
@@ -196,7 +197,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="scroll_up",
         description="Scroll up the page by pixel amount - if none is given, scroll one page",
@@ -206,7 +207,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="send_keys",
         description=(
@@ -219,7 +220,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="scroll_to_text",
         description="If you dont find something which you want to interact with, scroll to it",
@@ -229,7 +230,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="write_file",
         description="Write content to file_name in file system, use only .md or .txt extensions.",
@@ -241,7 +242,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="append_file",
         description="Append content to file_name in file system",
@@ -253,7 +254,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="read_file",
         description="Read file_name from file system",
@@ -263,7 +264,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="get_dropdown_options",
         description="Get all options from a native dropdown",
@@ -273,7 +274,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="select_dropdown_option",
         description="Select dropdown option for interactive element index by the text of the option you want to select",
@@ -285,7 +286,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="drag_drop",
         description="Drag and drop elements or between coordinates on the page - useful for canvas drawing, sortable lists, sliders, file uploads, and UI rearrangement",
@@ -295,7 +296,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="read_sheet_contents",
         description="Google Sheets: Get the contents of the entire sheet",
@@ -305,7 +306,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="read_cell_contents",
         description="Google Sheets: Get the contents of a cell or range of cells",
@@ -315,7 +316,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="update_cell_contents",
         description="Google Sheets: Update the content of a cell or range of cells",
@@ -329,7 +330,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="clear_cell_contents",
         description="Google Sheets: Clear whatever cells are currently selected",
@@ -339,7 +340,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="select_cell_or_range",
         description="Google Sheets: Select a specific cell or range of cells",
@@ -349,7 +350,7 @@ register_spec(
     )
 )
 
-register_spec(
+agentic_tools.register_spec(
     ToolSpec(
         id="fallback_input_into_single_selected_cell",
         description="Google Sheets: Fallback method to type text into (only one) currently selected cell",
