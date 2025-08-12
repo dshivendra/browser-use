@@ -1,7 +1,7 @@
 import logging
 from typing import cast
 
-from browser_use.agent.service import Agent
+from browser_use.agent import Agent
 from browser_use.llm.anthropic.chat import ChatAnthropic
 from browser_use.llm.anthropic.serializer import AnthropicMessageSerializer, NonSystemMessage
 from browser_use.llm.messages import (

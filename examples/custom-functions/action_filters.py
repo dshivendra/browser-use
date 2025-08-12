@@ -27,7 +27,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from agentic_os.browser_use.agent.service import Agent, Controller
+from agentic_os.browser_use import Agent, Controller
 from agentic_os.browser_use.browser import BrowserSession
 from agentic_os.browser_use.browser.types import Page
 from agentic_os.browser_use.llm import ChatOpenAI

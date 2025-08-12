@@ -12,7 +12,7 @@ load_dotenv()
 
 from pydantic import BaseModel
 
-from agentic_os.browser_use.agent.service import Agent
+from agentic_os.browser_use import Agent
 from agentic_os.browser_use.controller.service import Controller
 from agentic_os.browser_use.llm import ChatOpenAI
 
